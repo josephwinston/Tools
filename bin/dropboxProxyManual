@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# this script will change Dropbox's proxy mode setting to manual
+# broken in 1.2.48 and later due to Dropbox encrypting the DB
+
+exit 0
+
+echo "UPDATE config SET value = 2 WHERE key = 'proxy_mode';" | sqlite3 $HOME/.dropbox/config.db
+
